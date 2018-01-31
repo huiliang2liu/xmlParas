@@ -167,7 +167,7 @@ class DOMParas extends Paras {
 	}
 
 	/**
-	 * NodeTree è½¬æ¢ä¸ºString
+	 * NodeTree ×ª»»ÎªString
 	 * 
 	 * @param nodeTree
 	 * @return
@@ -179,7 +179,7 @@ class DOMParas extends Paras {
 			if (nodeTree == null)
 				return null;
 			Transformer transformer = getTransformer();
-			Source source = nodeTree2source(nodeTree); // è¡¨æ˜æ–‡æ¡£æ¥æºæ˜¯doc
+			Source source = nodeTree2source(nodeTree); // ±íÃ÷ÎÄµµÀ´Ô´ÊÇdoc
 			return source2string(transformer, source);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -188,7 +188,7 @@ class DOMParas extends Paras {
 	}
 
 	/**
-	 * List<NodeTree> è½¬æ¢ä¸ºString
+	 * List<NodeTree> ×ª»»ÎªString
 	 * 
 	 * @param nodeTree
 	 * @return
@@ -200,7 +200,7 @@ class DOMParas extends Paras {
 			if (nodeTree == null)
 				return null;
 			Transformer transformer = getTransformer();
-			Source source = nodeTree2source(nodeTree); // è¡¨æ˜æ–‡æ¡£æ¥æºæ˜¯doc
+			Source source = nodeTree2source(nodeTree); // ±íÃ÷ÎÄµµÀ´Ô´ÊÇdoc
 			return source2string(transformer, source);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -209,22 +209,22 @@ class DOMParas extends Paras {
 	}
 
 	/**
-	 * è·å–è½¬æ¢ç±»
+	 * »ñÈ¡×ª»»Àà
 	 * 
 	 * @return
 	 * @throws Exception
 	 */
 	private Transformer getTransformer() throws Exception {
-		TransformerFactory transFactory = TransformerFactory.newInstance();// å–å¾—TransformerFactoryå®ä¾‹
-		Transformer transformer = transFactory.newTransformer(); // ä»transFactoryè·å–Transformerå®ä¾‹
-		transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8"); // è®¾ç½®è¾“å‡ºé‡‡ç”¨çš„ç¼–ç æ–¹å¼
-		transformer.setOutputProperty(OutputKeys.INDENT, "yes"); // æ˜¯å¦è‡ªåŠ¨æ·»åŠ é¢å¤–çš„ç©ºç™½
-		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no"); // æ˜¯å¦å¿½ç•¥XMLå£°æ˜
+		TransformerFactory transFactory = TransformerFactory.newInstance();// È¡µÃTransformerFactoryÊµÀı
+		Transformer transformer = transFactory.newTransformer(); // ´ÓtransFactory»ñÈ¡TransformerÊµÀı
+		transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8"); // ÉèÖÃÊä³ö²ÉÓÃµÄ±àÂë·½Ê½
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes"); // ÊÇ·ñ×Ô¶¯Ìí¼Ó¶îÍâµÄ¿Õ°×
+		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no"); // ÊÇ·ñºöÂÔXMLÉùÃ÷
 		return transformer;
 	}
 
 	/**
-	 * Source è½¬æ¢ä¸ºString
+	 * Source ×ª»»ÎªString
 	 * 
 	 * @param transformer
 	 * @param source
@@ -234,13 +234,13 @@ class DOMParas extends Paras {
 	private String source2string(Transformer transformer, Source source)
 			throws Exception {
 		StringWriter writer = new StringWriter();
-		Result result = new StreamResult(writer);// è¡¨æ˜ç›®æ ‡ç»“æœä¸ºwriter
-		transformer.transform(source, result); // å¼€å§‹è½¬æ¢
+		Result result = new StreamResult(writer);// ±íÃ÷Ä¿±ê½á¹ûÎªwriter
+		transformer.transform(source, result); // ¿ªÊ¼×ª»»
 		return writer.toString();
 	}
 
 	/**
-	 * NodeTree è½¬æ¢ä¸ºSource
+	 * NodeTree ×ª»»ÎªSource
 	 * 
 	 * @param nodeTree
 	 * @return
@@ -252,7 +252,7 @@ class DOMParas extends Paras {
 	}
 
 	/**
-	 * List<NodeTree> è½¬æ¢ä¸ºSource
+	 * List<NodeTree> ×ª»»ÎªSource
 	 * 
 	 * @param nodeTrees
 	 * @return
@@ -266,7 +266,7 @@ class DOMParas extends Paras {
 	}
 
 	/**
-	 * NodeTree è½¬åŒ–ä¸ºnode
+	 * NodeTree ×ª»¯Îªnode
 	 * 
 	 * @param document
 	 * @param nodeTree
